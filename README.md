@@ -14,3 +14,6 @@ It is intended as a canonical example for agencies, partners, and policy makers.
 
 ## Quickstart
 See docs/Quickstart.md for the 7-step setup and playbooks.
+
+- See **Roles & RACI**: docs/Roles_RACI.md
+- Policy context: docs/Policy_Basics.md
