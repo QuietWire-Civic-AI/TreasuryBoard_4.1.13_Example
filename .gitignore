@@ -1,0 +1,9 @@
+# archives & OS cruft
+*.zip
+*.tar.gz
+.DS_Store
+Thumbs.db
+
+# node/python typicals (if added later)
+node_modules/
+__pycache__/

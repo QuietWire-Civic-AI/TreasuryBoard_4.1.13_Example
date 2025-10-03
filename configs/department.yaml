@@ -1,0 +1,14 @@
+# Example configuration for a department implementing Treasury Board Directive 4.1.13
+
+department_name: Example Department
+contact:
+  lead: Jane Doe
+  email: jane.doe@example.gov.ca
+disarm_tagging:
+  enabled: true
+  api_endpoint: https://disarm.foundation/api
+incident_response_team:
+  - name: Analyst 1
+    role: Tagger
+  - name: Analyst 2
+    role: Reviewer
