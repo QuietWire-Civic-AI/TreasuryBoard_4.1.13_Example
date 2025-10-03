@@ -1,0 +1,20 @@
+# DISARM Observable Example
+incident_id: EX-2025-0001
+observed_at: 2025-10-03T12:00:00Z
+sources:
+  - url: https://example.social/post/12345
+  - capture: /evidence/screenshot_12345.png
+observables:
+  platform: "ExampleSocial"
+  content_type: "text"
+  accounts:
+    suspected_coordination: true
+    signals:
+      - simultaneous_posting
+      - shared_url_shortener
+  behaviors:
+    - mass_mentioning
+    - cross_platform_amplification
+tags:
+  - disarm:observable
+  - directive:4.1.13

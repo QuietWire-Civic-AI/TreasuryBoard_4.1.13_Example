@@ -1,0 +1,19 @@
+# DISARM Inference Example (analyst layer)
+incident_id: EX-2025-0001
+analyst: "Lumina"
+assessed_at: 2025-10-03T12:30:00Z
+inferences:
+  likely_objective: "delegitimize_public_institution"
+  likely_audience: ["domestic_low_trust_groups"]
+  assessed_campaign_stage: "amplification"
+  assessed_attribution_confidence: "low"
+rationale:
+  - "Coordinated accounts, freshly created, repeating identical frames."
+  - "Off-platform links into monetized video channels."
+recommended_actions:
+  - "Activate Misinformation_Playbook"
+  - "Notify cross-dept liaison"
+  - "Begin counter-messaging preparation"
+tags:
+  - disarm:inference
+  - directive:4.1.13
