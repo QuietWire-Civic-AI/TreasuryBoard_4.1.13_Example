@@ -1,0 +1,35 @@
+name: Incident intake (sample prefilled)
+description: Example form prefilled with demo content for training
+title: "[INTAKE] Example: Coordinated reposts of legacy article"
+labels: ["intake","example"]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Source URL or channel
+      value: "https://example.com/legacy-article"
+  - type: textarea
+    id: description
+    attributes:
+      label: What was observed?
+      value: |
+        Multiple accounts are reposting the same 2019 article within 10 minutes, using identical link shorteners.
+        Two accounts created in the last 48h. Posts appear across X and Facebook groups.
+  - type: checkboxes
+    id: coord
+    attributes:
+      label: Any signs of coordination?
+      options:
+        - label: simultaneous posting
+          default: true
+        - label: shared creative assets
+        - label: shared link shortener
+          default: true
+        - label: repeated frames across accounts
+          default: true
+  - type: input
+    id: evidence
+    attributes:
+      label: Evidence location
+      value: "/evidence/EX-2025-0001/"
+
