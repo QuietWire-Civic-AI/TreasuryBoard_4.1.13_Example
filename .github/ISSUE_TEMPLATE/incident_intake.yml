@@ -1,0 +1,33 @@
+name: Incident intake (4.1.13)
+description: Submit a new report/incident for tagging and triage
+title: "[INTAKE] <short summary>"
+labels: ["intake"]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Source URL or channel
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What was observed?
+      description: Facts only; no interpretation yet.
+    validations:
+      required: true
+  - type: checkboxes
+    id: coord
+    attributes:
+      label: Any signs of coordination?
+      options:
+        - label: simultaneous posting
+        - label: shared creative assets
+        - label: shared link shortener
+        - label: repeated frames across accounts
+  - type: input
+    id: evidence
+    attributes:
+      label: Evidence location
+      placeholder: /path/to/evidence or cloud link

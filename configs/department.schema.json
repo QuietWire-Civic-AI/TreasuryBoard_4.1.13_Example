@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Department Config (4.1.13)",
+  "type": "object",
+  "required": ["department_name", "contacts", "routing", "disarm", "reporting"],
+  "properties": {
+    "department_name": { "type": "string", "minLength": 3 },
+    "contacts": {
+      "type": "object",
+      "required": ["lead", "liaison_tbs"],
+      "properties": {
+        "lead": {
+          "type": "object",
+          "required": ["name", "email"],
+          "properties": {
+            "name": { "type": "string" },
+            "email": { "type": "string", "format": "email" }
+          }
+        },
+        "liaison_tbs": {
+          "type": "object",
+          "required": ["name", "email"],
+          "properties": {
+            "name": { "type": "string" },
+            "email": { "type": "string", "format": "email" }
+          }
+        }
+      }
+    },
+    "routing": {
+      "type": "object",
+      "required": ["low", "medium", "high"],
+      "properties": {
+        "low": { "type": "string" },
+        "medium": { "type": "string" },
+        "high": { "type": "string" }
+      }
+    },
+    "disarm": {
+      "type": "object",
+      "required": ["use_observables_first", "taxonomy_version"],
+      "properties": {
+        "use_observables_first": { "type": "boolean" },
+        "taxonomy_version": { "type": "string" }
+      }
+    },
+    "reporting": {
+      "type": "object",
+      "required": ["metrics"],
+      "properties": {
+        "metrics": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

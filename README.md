@@ -11,3 +11,6 @@ and includes sample playbooks, YAML configurations, training scripts, and report
 
 It is intended as a canonical example for agencies, partners, and policy makers.
 
+
+## Quickstart
+See docs/Quickstart.md for the 7-step setup and playbooks.

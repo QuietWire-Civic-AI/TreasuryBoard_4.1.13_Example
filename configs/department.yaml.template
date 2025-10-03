@@ -1,0 +1,21 @@
+# Copy to: configs/department.yaml and edit for your department
+department_name: "<Department / Agency Name>"
+contacts:
+  lead:
+    name: "<Lead Analyst>"
+    email: "<lead@example.gov.ca>"
+  liaison_tbs:
+    name: "<Treasury Board Liaison>"
+    email: "<liaison@example.gov.ca>"
+routing:
+  low:   "internal triage → weekly review"
+  medium:"response team within 48h"
+  high:  "immediate exec + TBS coordination"
+disarm:
+  use_observables_first: true
+  taxonomy_version: "2.0-preview"
+reporting:
+  metrics:
+    - time_to_tag
+    - time_to_decision
+    - resolution_category
