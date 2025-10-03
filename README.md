@@ -1,3 +1,5 @@
+[![DISARM Template](https://img.shields.io/badge/DISARM-template-blue)](./README.md)  [![Mermaid](https://img.shields.io/badge/diagram-mermaid-success)](docs/Flow_Diagram.md)
+
 > A plug-and-play template for Canadian federal departments to meet Treasury Board Directive **4.1.13** using the **DISARM** framework. Fork it, fill in `configs/department.yaml`, and run the playbooks.
 # Treasury Board Directive 4.1.13 – Example DISARM Implementation
 
