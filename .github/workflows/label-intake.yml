@@ -2,13 +2,12 @@ name: Label new incidents as intake
 on:
   issues:
     types: [opened]
+permissions:
+  issues: write
 jobs:
   label:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
     steps:
-      - name: Add intake label
-        uses: actions-ecosystem/action-add-labels@v1
+      - uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: intake

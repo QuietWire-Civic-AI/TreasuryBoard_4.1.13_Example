@@ -2,28 +2,35 @@ name: Issue → incident folder
 on:
   issues:
     types: [labeled]
+permissions:
+  contents: write
+  issues: read
 jobs:
   create-folder:
     if: github.event.label.name == 'intake'
     runs-on: ubuntu-latest
-    permissions:
-      contents: write    # commit folder
-      issues: write      # post comment
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
       - name: Make folder + seed notes
         run: |
           ID="EX-$(date +%Y)-$(printf '%04d' ${{ github.event.issue.number }})"
           DIR="incidents/${ID}"
           mkdir -p "$DIR"
           cat > "${DIR}/notes.md" <<MD
-          # ${ID} — ${GITHUB_REPOSITORY}#${{ github.event.issue.number }}
+          # ${ID} — ${{ github.event.issue.title }}
+
           Source: ${{ github.event.issue.html_url }}
           Opened: ${{ github.event.issue.created_at }}
+          Labels: ${{ join(github.event.issue.labels.*.name, ', ') }}
+
+          ## Intake facts
+          ${{ github.event.issue.body }}
           MD
-          git config user.name "github-actions"
+          git config user.name  "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add "$DIR/notes.md"
+          git add "${DIR}/notes.md"
           git commit -m "seed incident folder for #${{ github.event.issue.number }}"
           git push
       - name: Comment back with path

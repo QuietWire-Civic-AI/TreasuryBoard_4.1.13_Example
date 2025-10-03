@@ -7,29 +7,38 @@ body:
     id: source
     attributes:
       label: Source URL or channel
-      value: "https://example.com/legacy-article"
+      value: "https://example.com/2019-legacy-article"
+    validations:
+      required: true
+
   - type: textarea
     id: description
     attributes:
       label: What was observed?
       value: |
-        Multiple accounts are reposting the same 2019 article within 10 minutes, using identical link shorteners.
-        Two accounts created in the last 48h. Posts appear across X and Facebook groups.
+        • Within a 15-minute window, 12 accounts reposted the same 2019 article.
+        • 5 of the 12 accounts were created in the last 72 hours.
+        • Posts used identical UTM parameters and the same link shortener hash.
+        • Cross-posted into two local Facebook groups (8.2k, 11.4k members).
+        • No new commentary; captions differ by only 1–2 characters.
+    validations:
+      required: true
+
   - type: checkboxes
     id: coord
     attributes:
       label: Any signs of coordination?
       options:
         - label: simultaneous posting
-          default: true
+          checked: true
         - label: shared creative assets
+          checked: true
         - label: shared link shortener
-          default: true
+          checked: true
         - label: repeated frames across accounts
-          default: true
+
   - type: input
     id: evidence
     attributes:
       label: Evidence location
-      value: "/evidence/EX-2025-0001/"
-
+      value: "/incidents/EX-2025-0001/"
