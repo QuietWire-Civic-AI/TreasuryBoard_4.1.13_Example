@@ -1,0 +1,22 @@
+name: Validate Department Config
+on:
+  push: { branches: [ "main" ] }
+  pull_request: { branches: [ "main" ] }
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with: { python-version: '3.x' }
+      - name: Install deps
+        run: |
+          pip install jsonschema pyyaml
+          sudo apt-get update && sudo apt-get install -y make
+      - name: Run validator (skip if no department.yaml)
+        run: |
+          if [ -f configs/department.yaml ]; then
+            make validate
+          else
+            echo "No configs/department.yaml yet — skipping validation (template repo)."
+          fi
